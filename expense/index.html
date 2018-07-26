@@ -1,0 +1,93 @@
+<html>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="mycss.css" rel="stylesheet" type="text/css">
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="myjs.js"></script>
+    
+
+</head>
+
+<body>
+<h1>Expense Manager</h1>
+<h2>Add a new item:</h2>
+
+<div id="form-box">
+<form>
+  <div>
+    <span>Type:</span> 
+      <select name="type">
+          <option value="card">Card</option>
+          <option value="cash">Cash</option>
+          <option value="other">Other</option>
+      </select>
+  </div>
+  
+  <div>
+    <span>Name:</span> <input type="text" name="item-name" placeholder="What did you spend on?">
+  </div>
+  
+  <div>
+    <span>Date:</span> <input class="plz" type="date" name="date">
+  </div>
+  
+  <div>
+    <span>Amount:</span> <input type="number" name="amount" placeholder="How much?">
+  </div>
+
+  <div>
+    <span>Category:</span> 
+      <select class="try" name="cat">
+          <option value="Entertainment">Entertainment</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Groceries">Groceries</option>
+          <option value="Shopping">Shopping</option>
+      </select>
+  </div>
+  
+</form>
+</div>
+
+
+
+<div id="button"><span>Add a new expense</span></div>
+
+
+
+<table class="alpha">
+  <tr>
+    <th id="type" class="center">Type</th>
+    <th>Name</th>
+    <th id="date">Date</th>
+    <th id="cat">Category</th>
+    <th style="text-align: right" id="amount">Amount</th>
+  </tr>
+  <tr id="if-empty">
+    <td colspan="5"><span>Your added items will show up here!</span></td>
+  </tr>
+
+</table>
+
+<table class="beta">
+  <tr>
+    <td><center><img id='ecell' src="img/e1.png" alt="" height=100 width=100></center></td>
+    <td><center><img id='tcell' src="img/t1.png" alt="" height=100 width=100></center></td>
+    <td><center><img id='gcell' src="img/g1.png" alt="" height=100 width=100></center></td>
+    <td><center><img id='scell' src="img/s1.png" alt="" height=100 width=100></center></td>
+  </tr>
+  <tr>
+    <th class="center">Entertainment</th>
+    <th class="center">Transportation</th>
+    <th class="center">Groceries</th>
+    <th class="center">Shopping</th>
+  </tr>
+  
+
+</table>
+
+
+</body>
+</html>
+

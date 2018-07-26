@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Love Countdown</title>
+		<style type="text/css">
+
+
+
+		@media (max-width: 768px) {
+  body {
+     background-image: url("http://www3.cs.stonybrook.edu/~sohmehta/bhakti/smally.jpg");
+   	
+  }
+}
+@media (min-width: 769px) {
+  body {
+    background-image: url("http://www3.cs.stonybrook.edu/~sohmehta/bhakti/big.jpg");
+    
+  }
+						}
+
+@media (min-height: 769px) {
+  body {
+    background-image: url("http://www3.cs.stonybrook.edu/~sohmehta/bhakti/smally.jpg");
+    
+  }
+						}
+
+		
+		.countdownContainer{
+			position: absolute;;
+			top: 50%;
+			left: 50%;
+			transform : translateX(-50%) translateY(40%);
+			text-align: center;
+			color: white;
+			border: 1px solid #999;
+			padding: 10px;
+			box-shadow: 0 0 5px 3px #ccc;
+
+		}
+
+		.info {
+			font-size: 50px;
+		}
+
+
+		</style>
+	</head>
+	<body>
+		<table class="countdownContainer" cellspacing="3"; cellpadding="3" >
+			<tr class="info">
+				<td colspan="4"></td>
+			</tr>
+			<centre>
+			<tr class="info">
+				<td colspan="4" id="heartbeat"></td>
+			</tr>
+			</centre>
+			<tr>
+				<td colspan="4">Heartbeats</td>
+			</tr>
+			<tr class="info">
+				<td id="days">120</td>
+				<td id="hours">4</td>
+				<td id="minutes">12</td>
+				<td id="seconds">22</td>
+			</tr>
+			<tr>
+				<td>Days</td>
+				<td>Hours</td>
+				<td>Minutes</td>
+				<td>Seconds</td>
+			</tr>
+		</table>
+
+
+
+		<script type="text/javascript">
+
+			function countdown(){
+				var now = new Date();
+				var eventDate = new Date(2018, 00, 01);
+
+				var currentTiime = now.getTime();
+				var eventTime = eventDate.getTime();
+
+				//alert(eventDate.toString());
+
+				var remTime = eventTime - currentTiime ;
+				var heart=Math.floor(remTime/1000)
+				var s = Math.floor(remTime / 1000);
+				var m = Math.floor(s / 60);
+				var h = Math.floor(m / 60);
+				var d = Math.floor(h / 24);
+
+				h %= 24;
+				m %= 60;
+				s %= 60;
+
+				h = (h < 10) ? "0" + h : h;
+				m = (m < 10) ? "0" + m : m;
+				s = (s < 10) ? "0" + s : s;
+
+
+				document.getElementById("heartbeat").textContent = heart;
+
+				document.getElementById("days").textContent = d;
+				document.getElementById("days").innerText = d;
+
+				document.getElementById("hours").textContent = h;
+				document.getElementById("minutes").textContent = m;
+				document.getElementById("seconds").textContent = s;
+
+				setTimeout(countdown, 1000);
+			}
+
+			countdown();
+		</script>
+
+
+	</body>
+</html>
